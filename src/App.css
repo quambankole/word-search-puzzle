@@ -47,20 +47,22 @@
   padding: 8px;
   background: #089593;
   border: 2px solid #333;
-  border-radius: 4px;
+  border-radius: 10px;
 }
 
 /* Each row is a horizontal line of cells */
 .puzzle-row {
   display: flex;
+  gap: 10px;
 }
 
 /* Each cell is a square box */
 .puzzle-cell {
-  width: 32px;
-  height: 32px;
+  width: 50px;
+  height: 50px;
   border: 1px solid #333;
   display: flex;
+
   align-items: center;
   justify-content: center;
   font-family: monospace;
@@ -70,10 +72,67 @@
 
 /* Optional: spacing between rows */
 .puzzle-row + .puzzle-row {
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
 /* Optional: hover effect for fun */
 .puzzle-cell:hover {
   background: #ffeaa7;
+}
+
+.puzzle-cell.selected {
+  background: #ffeaa7;
+  outline: 2px solid #333;
+}
+
+.status {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.wordlist {
+  margin-top: 14px;
+  text-align: left;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wordlist-title {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.wordlist-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.word-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  border: 1px solid #333;
+  border-radius: 999px;
+  font-family: monospace;
+  text-transform: uppercase;
+  background: #fff;
+}
+
+.word-chip.found {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.no-select {
+  /* Safari */
+  -webkit-user-select: none;
+  /* Firefox */
+  -moz-user-select: none;
+  /* IE 10+ and Edge */
+  -ms-user-select: none;
+  /* Standard property, supported by all modern browsers */
+  user-select: none;
 }
